@@ -13,23 +13,23 @@ let rankingAlgorithm=(hacker)=>{
     return (a+b+c)/3;
 }
 
-router.get("/", async(req,res) => {
-    try{
-        // const { title } = req.body;
+// router.get("/", async(req,res) => {
+//     try{
+//         // const { title } = req.body;
 
-        // if(!title)
-        //     return res.status(400).json({msg: "Not all fields have been entered"});
+//         // if(!title)
+//         //     return res.status(400).json({msg: "Not all fields have been entered"});
 
-        data.forEach(async (x,i)=>{
-            const newHacker = new Hacker(x);
-            const savedHacker = await newHacker.save();
-        });
+//         data.forEach(async (x,i)=>{
+//             const newHacker = new Hacker(x);
+//             const savedHacker = await newHacker.save();
+//         });
         
-        res.send("completed");
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-})
+//         res.send("completed");
+//     } catch (err) {
+//         res.status(500).json({ error: err.message });
+//     }
+// })
 
 router.get("/all",auth, async(req,res) => {
     const hackers = await Hacker.find({},'name profile');
