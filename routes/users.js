@@ -105,7 +105,7 @@ router.get("/", auth, async (req, res) => {
 
 router.get("/device",auth, async(req,res) => {
   const desktops = await User.countDocuments({device:'desktop'});
-  const mobiles = await User.countDocuments({device:'mobile'});
+  const mobiles = await User.countDocuments({device:'phone'});
   const tabs = await User.countDocuments({device:'tablet'});
 
 
